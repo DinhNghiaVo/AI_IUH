@@ -1,0 +1,2 @@
+# AI_IUH
+MiniProjectForAI
