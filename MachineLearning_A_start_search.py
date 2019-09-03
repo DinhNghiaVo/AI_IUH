@@ -10,11 +10,11 @@ def create_grid(event=None):
 
     # Creates all vertical lines at intevals of 100
     for i in range(0, w, N):
-        Frame.create_line([(i, 0), (i, h)], tag='grid_line')
+        Frame.create_line([(i, 0), (i, h)], fill="gray")
 
     # Creates all horizontal lines at intevals of 100
     for i in range(0, h, N):
-        Frame.create_line([(0, i), (w, i)], tag='grid_line')
+        Frame.create_line([(0, i), (w, i)], fill="gray")
 #Create Shape
 def CreateShape(x,y,Time,color):
 	time.sleep(Time)
@@ -42,7 +42,7 @@ def dragOrigin(eventorigin):
       	return 0
       else:
       	Block[x][y] = 1
-      	CreateShape(x,y,0,"pink")
+      	CreateShape(x,y,0,"Black")
 #startBFS
 def getorigin(eventorigin):
 	x = eventorigin.x
@@ -121,7 +121,7 @@ def traceBack():
 	b = path[x][y][1]
 	while(a!=-1 and b!=-1):
 		if(x != End[0] or y != End[1]):
-			CreateShape(x,y,0,"Purple")
+			CreateShape(x,y,0,"Red")
 		x = a
 		y = b
 		a = path[x][y][0]
@@ -155,13 +155,13 @@ def a_star_search(start,goal):
 		current = frontier.get()[1]
 		#Reach Goal
 		if(current == goal):
-			CreateShape(Start[0],Start[1],BaseTime,"Red")
+			CreateShape(Start[0],Start[1],BaseTime,"Green2")
 			CreateShape(End[0],End[1],BaseTime,"Green2")
 			return True
 		#Draw Blue spot
 		if(current != start):
 			CreateShape(current[0],current[1],BaseTime,"yellow")
-			CreateShape(current[0],current[1],BaseTime,"blue")
+			CreateShape(current[0],current[1],BaseTime,"aquamarine")
 		#Scout 4 directions
 		for i in range(4):
 			Next = (current[0]+dx[i],current[1]+dy[i])
