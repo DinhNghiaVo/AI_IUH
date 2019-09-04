@@ -6,7 +6,7 @@ import queue
 def create_grid(event=None):
     w = Frame.winfo_width() # Get current width of canvas
     h = Frame.winfo_height() # Get current height of canvas
-    Frame.delete('grid_line') # Will only remove the grid_line
+
 
     # Creates all vertical lines at intevals of 100
     for i in range(0, w, N):
@@ -53,8 +53,11 @@ def getorigin(eventorigin):
 	if(Start[0]!= -1):
 		if(End[0]!=-1):
 			if(x == RunCell[0] and y == RunCell[1]):
+				start_time = time.time()
 				flag = a_star_search(Start,End)
+				end_time = time.time()
 				print(flag)
+				print (str((end_time - start_time))+ str("  s"))
 				if(flag == True):
 					traceBack()
 					#print(dist[End[0]][End[1]])
@@ -85,7 +88,7 @@ def InitMatrix():
 	sizeX = 50
 	sizeY = 50
 	Block = [ [0 for i in range(sizeX+10)] for i in range(sizeY+10)]
-	N = 30
+	N = 30 # kích thước của 
 	Frame = tk.Canvas(root, height=1500, width=1500, bg='white')
 	Frame.pack(fill=tk.BOTH, expand=True)
 	Frame.bind('<Configure>', create_grid)

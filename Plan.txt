@@ -1,22 +1,13 @@
-﻿1.0  BFS- duyet 		 type = 0					3
-
-2.0  A-start  - duyet sau + herictic	type = 1				6
-
-3.0  UI- 								7
-
-4.0  merge code - 							3
-
-5.0  Thuyet trinh - 							2
-
-6.0  Chuẩn bị PP : đơn giản thôi : giới thiệu sơ k cần nhiều  		1
-
-7.0  Viết báo cáo : 							3
-
+﻿1.0  A-start  - duyet sau + herictic				
+2.0  UI 								
+3.0  merge code 							
+4.0  Thuyet trinh 						
+5.0  Viết báo cáo					
 trả lời câu hỏi  : cả nhóm 
 
 
-Nghia - 4 5 7 6 
-Quang - 3
-Trang - 2  1
-def funtion () : xy :XY :type : (1,3) : (2,5) : (
+Nghia - 3 - 4 - 5
+Quang - 1
+Trang - 2
+date : 30/8/2019
 
