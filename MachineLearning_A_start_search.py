@@ -130,7 +130,7 @@ def traceBack():
 		a = path[x][y][0]
 		b = path[x][y][1]
 #A Start Search
-def heuristic(a,b):
+def heuristic(a,b): # G(x)
 	(x1,y1) = a
 	(x2,y2) = b
 	return abs(x1-x2)+abs(y1-y2)
@@ -158,8 +158,8 @@ def a_star_search(start,goal):
 		current = frontier.get()[1]
 		#Reach Goal
 		if(current == goal):
-			CreateShape(Start[0],Start[1],BaseTime,"Green2")
-			CreateShape(End[0],End[1],BaseTime,"Green2")
+			CreateShape(Start[0],Start[1],BaseTime,"Green2")# khởi tạo điểm bắt đầu 
+			CreateShape(End[0],End[1],BaseTime,"Green2")# Khởi tạo điểm kết thúc
 			return True
 		#Draw Blue spot
 		if(current != start):
@@ -171,9 +171,9 @@ def a_star_search(start,goal):
 			if(not Astar_ValidNode(Next)):
 				continue
 			new_cost = cost_so_far[current]+1
-			if(Next not in cost_so_far or new_cost < cost_so_far[Next]):
+			if(Next not in cost_so_far or new_cost < cost_so_far[Next]):#Min-Heap: ở đây giá trị của nút gốc là nhỏ hơn hoặc bằng các giá trị của các nút con
 				cost_so_far[Next] = new_cost
-				priority = new_cost+heuristic(goal,Next)
+				priority = new_cost+heuristic(goal,Next) # hàm  heuristis được gọi truyền vào  điểm kết thúc và điểm tiếp theo để duyệt và trả về khoảng cách giữa 2 điểm
 				frontier.put((priority,Next))
 				path[Next[0]][Next[1]] = ([current[0],current[1]])
 	return False		
